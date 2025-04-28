@@ -1,0 +1,16 @@
+<div class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg" *ngIf="attendee">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">{{ attendee.fullName }}</h2>
+    <div class="space-y-2">
+      <p><strong>Email:</strong> {{ attendee.email }}</p>
+      <p><strong>Event ID:</strong> {{ attendee.eventId }}</p>
+    </div>
+    <button
+      [routerLink]="['/attendees']"
+      class="mt-4 bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700"
+    >
+      Back to Attendees
+    </button>
+  </div>
+  <div *ngIf="!attendee" class="text-center p-6">
+    <p class="text-red-600">Attendee not found</p>
+  </div>

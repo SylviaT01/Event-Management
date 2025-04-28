@@ -1,0 +1,48 @@
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">Events</h2>
+    <button
+      [routerLink]="['/events/create']"
+      class="mb-4 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+    >
+      Create Event
+    </button>
+    <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-4 text-left">Name</th>
+          <th class="p-4 text-left">Location</th>
+          <th class="p-4 text-left">Date</th>
+          <th class="p-4 text-left">Capacity</th>
+          <th class="p-4 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let event of events" class="border-b hover:bg-gray-50">
+          <td class="p-4">{{ event.name }}</td>
+          <td class="p-4">{{ event.location }}</td>
+          <td class="p-4">{{ event.date }}</td>
+          <td class="p-4">{{ event.capacity }}</td>
+          <td class="p-4 space-x-2">
+            <button
+              [routerLink]="['/events', event.id]"
+              class="text-blue-600 hover:underline"
+            >
+              View
+            </button>
+            <button
+              [routerLink]="['/events/edit', event.id]"
+              class="text-green-600 hover:underline"
+            >
+              Edit
+            </button>
+            <button
+              (click)="deleteEvent(event.id)"
+              class="text-red-600 hover:underline"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,40 @@
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">Attendees</h2>
+    <button
+      [routerLink]="['/attendees/register']"
+      class="mb-4 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+    >
+      Register Attendee
+    </button>
+    <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-4 text-left">Full Name</th>
+          <th class="p-4 text-left">Email</th>
+          <th class="p-4 text-left">Event ID</th>
+          <th class="p-4 text-left">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let attendee of attendees" class="border-b hover:bg-gray-50">
+          <td class="p-4">{{ attendee.fullName }}</td>
+          <td class="p-4">{{ attendee.email }}</td>
+          <td class="p-4">{{ attendee.eventId }}</td>
+          <td class="p-4 space-x-2">
+            <button
+              [routerLink]="['/attendees', attendee.id]"
+              class="text-blue-600 hover:underline"
+            >
+              View
+            </button>
+            <button
+              (click)="deleteAttendee(attendee.id)"
+              class="text-red-600 hover:underline"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

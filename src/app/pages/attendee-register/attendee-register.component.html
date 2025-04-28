@@ -1,0 +1,46 @@
+<div class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">Register Attendee</h2>
+    <form (ngSubmit)="onSubmit()" class="space-y-4">
+      <div>
+        <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input
+          id="fullName"
+          [(ngModel)]="attendee.fullName"
+          name="fullName"
+          type="text"
+          required
+          class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input
+          id="email"
+          [(ngModel)]="attendee.email"
+          name="email"
+          type="email"
+          required
+          class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        />
+      </div>
+      <div>
+        <label for="eventId" class="block text-sm font-medium text-gray-700">Event</label>
+        <select
+          id="eventId"
+          [(ngModel)]="attendee.eventId"
+          name="eventId"
+          required
+          class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+        >
+          <option value="">Select an event</option>
+          <option *ngFor="let event of events" [value]="event.id">{{ event.name }}</option>
+        </select>
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+      >
+        Register
+      </button>
+    </form>
+  </div>

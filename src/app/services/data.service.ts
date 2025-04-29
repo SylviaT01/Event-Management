@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, Observable, of, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -25,6 +25,7 @@ export interface Ticket {
   attendeeId: string;
   eventId: string;
   type: string;
+  ticketNumber?: string;
 }
 
 @Injectable({
@@ -111,8 +112,30 @@ export class DataService {
     );
   }
 
-  issueTicket(ticket: Omit<Ticket, 'id'>): Observable<Ticket> {
-    const newTicket = { ...ticket, id: uuidv4() };
+  issueTicket(ticket: Omit<Ticket, 'id' | 'ticketNumber'>): Observable<Ticket> {
+   
+    const generateRandomNumber = (): string => {
+      return Math.floor(1000 + Math.random() * 9000).toString();
+    };
+
+   
+    const getPrefix = (type: string): string => {
+      switch(type.toLowerCase()) {
+        case 'regular':
+          return 'REG';
+        case 'vip':
+          return 'VIP';
+        case 'vvip':
+          return 'VVIP';
+        default:
+          return 'TCK';
+      }
+    };
+
+    const ticketNumber = getPrefix(ticket.type) + generateRandomNumber();
+
+    const newTicket = { ...ticket, id: uuidv4(), ticketNumber };
+
     return this.http.post<Ticket>(`${this.baseUrl}/tickets`, newTicket).pipe(
       catchError(this.handleError),
       // After ticket is issued, update the event's ticketsIssued count

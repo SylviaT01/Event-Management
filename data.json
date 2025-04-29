@@ -6,7 +6,7 @@
       "location": "Nairobi Convention Center",
       "date": "2025-06-20",
       "capacity": 200,
-      "ticketsIssued": 1
+      "ticketsIssued": 2
     },
     {
       "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -21,7 +21,7 @@
       "location": "Kisumu Tech Hub",
       "date": "2025-08-10",
       "capacity": 100,
-      "ticketsIssued": 1
+      "ticketsIssued": 2
     },
     {
       "id": "cb06267b-e1bb-4b79-93b7-9899c4fc705d",
@@ -35,7 +35,8 @@
       "name": "Korom Festival",
       "location": "Carnivore Grounds",
       "date": "2025-05-03",
-      "capacity": 1000
+      "capacity": 1000,
+      "ticketsIssued": 1
     },
     {
       "id": "03e9feaf-45e7-47d8-a760-2e717d9adaa3",
@@ -90,10 +91,10 @@
       "eventId": "550e8400-e29b-41d4-a716-446655440000"
     },
     {
-      "id": "19107b4b-a95c-4a10-abe4-d9d7a8812272",
-      "fullName": "Ian Tuei",
-      "email": "iantuei@gmail.com",
-      "eventId": null
+      "id": "3948925b-f354-4fab-996e-f72f8e224590",
+      "fullName": "jay",
+      "email": "jay@gmail.com",
+      "eventId": "550e8400-e29b-41d4-a716-446655440000"
     }
   ],
   "tickets": [
@@ -156,6 +157,27 @@
       "attendeeId": "123e4567-e89b-12d3-a456-426614174000",
       "eventId": "550e8400-e29b-41d4-a716-446655440000",
       "type": "VIP"
+    },
+    {
+      "id": "a23e547d-cb36-408f-a7bb-eccbb75777db",
+      "attendeeId": "987fcdeb-12ab-34cd-56ef-789012345678",
+      "eventId": "550e8400-e29b-41d4-a716-446655440000",
+      "type": "VVIP",
+      "ticketNumber": 7
+    },
+    {
+      "id": "a8b64ae8-9f22-43f6-95d1-7b548ea37029",
+      "attendeeId": "f42fb84f-d5f3-4beb-8645-95bc07e17bda",
+      "eventId": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+      "type": "VVIP",
+      "ticketNumber": "VVP7709"
+    },
+    {
+      "id": "7b268f0d-6373-4d6f-81d1-e254b897ca3e",
+      "attendeeId": "85b68218-665c-41ed-81c7-1d547b2336b4",
+      "eventId": "11c01ab1-3003-4b2b-b044-3088a8ccff0d",
+      "type": "VVIP",
+      "ticketNumber": "VVIP1499"
     }
   ]
 }

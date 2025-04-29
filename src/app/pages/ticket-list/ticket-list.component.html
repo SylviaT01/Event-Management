@@ -7,38 +7,40 @@
     >
       + Issue Ticket
     </button>
-    </div>
-    <table class="w-full bg-white shadow-md rounded-lg overflow-hidden text-gray-600">
-      <thead class="bg-gray-100">
-        <tr>
-          <th class="p-4 text-left">#</th>
-          <th class="p-4 text-left">Attendee Name</th>
-          <th class="p-4 text-left">Event Name</th>
-          <th class="p-4 text-left">Type</th>
-          <th class="p-4 text-left">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let ticket of tickets let i = index" class="border-b hover:bg-gray-50">
-          <td class="p-4">{{ i + 1}}</td>
-          <td class="p-4">{{ attendeeMap[ticket.attendeeId] || ticket.attendeeId }}</td>
-          <td class="p-4">{{ eventMap[ticket.eventId] || ticket.eventId }}</td>
-          <td class="p-4">{{ ticket.type }}</td>
-          <td class="p-4 space-x-2">
-            <button
-              [routerLink]="['/tickets', ticket.id]"
-              class="text-blue-400 hover:underline"
-            >
-            <span class="material-icons">visibility</span>
-            </button>
-            <button
-              (click)="deleteTicket(ticket.id)"
-              class="text-red-400 hover:underline"
-            >
-            <span class="material-icons">cancel</span>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
+  <table class="w-full bg-white shadow-md rounded-lg overflow-hidden text-gray-600">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="p-4 text-left">#</th>
+        <th class="p-4 text-left">Ticket Number</th>
+        <th class="p-4 text-left">Attendee Name</th>
+        <th class="p-4 text-left">Event Name</th>
+        <th class="p-4 text-left">Type</th>
+        <th class="p-4 text-left">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of tickets; let i = index" class="border-b hover:bg-gray-50">
+        <td class="p-4">{{ i + 1 }}</td>
+        <td class="p-4">{{ ticket.ticketNumber }}</td>
+        <td class="p-4">{{ attendeeMap[ticket.attendeeId] || ticket.attendeeId }}</td>
+        <td class="p-4">{{ eventMap[ticket.eventId] || ticket.eventId }}</td>
+        <td class="p-4">{{ ticket.type }}</td>
+        <td class="p-4 space-x-2">
+          <button
+            [routerLink]="['/tickets', ticket.id]"
+            class="text-blue-400 hover:underline"
+          >
+            <span class="material-icons">visibility</span>
+          </button>
+          <button
+            (click)="deleteTicket(ticket.id)"
+            class="text-red-400 hover:underline"
+          >
+            <span class="material-icons">cancel</span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

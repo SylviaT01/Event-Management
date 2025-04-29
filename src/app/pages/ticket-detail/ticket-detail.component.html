@@ -1,8 +1,8 @@
-<div class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg" *ngIf="ticket">
+<div class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg mt-10" *ngIf="ticket">
     <h2 class="text-2xl font-bold mb-4 text-gray-800">Ticket Details</h2>
-    <div class="space-y-2">
-      <p><strong>Attendee ID:</strong> {{ ticket.attendeeId }}</p>
-      <p><strong>Event ID:</strong> {{ ticket.eventId }}</p>
+    <div class="space-y-2 text-gray-500">
+      <p><strong>Attendee Name:</strong> {{ attendeeMap[ticket.attendeeId] || ticket.attendeeId }}</p>
+      <p><strong>Event Name:</strong> {{ eventMap[ticket.eventId] || ticket.eventId }}</p>
       <p><strong>Type:</strong> {{ ticket.type }}</p>
     </div>
     <button

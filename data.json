@@ -92,6 +92,12 @@
       "attendeeId": "456789ab-cdef-1234-5678-901234567890",
       "eventId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
       "type": "General"
+    },
+    {
+      "id": "01a0d013-e10f-442b-b01e-98893070ab56",
+      "attendeeId": "85b68218-665c-41ed-81c7-1d547b2336b4",
+      "eventId": "11c01ab1-3003-4b2b-b044-3088a8ccff0d",
+      "type": "Regular"
     }
   ]
 }

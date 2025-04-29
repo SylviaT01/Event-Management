@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService, Ticket } from '../../services/data.service';
+import { Attendee, Event, DataService, Ticket } from '../../services/data.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,11 @@ import { Router } from '@angular/router';
 })
 export class TicketListComponent implements OnInit {
   tickets: Ticket[] = [];
+  events: Event[] = [];
+  eventMap: { [key: string]: string } = {}; 
+  attendees: Attendee[] =[];
+  attendeeMap: { [key: string]: string } = {}; 
+
 
   constructor(
     private dataService: DataService,
@@ -20,6 +25,9 @@ export class TicketListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTickets();
+    this.loadEvents();
+    this.loadAttendees()
+
   }
 
   loadTickets(): void {
@@ -40,5 +48,34 @@ export class TicketListComponent implements OnInit {
       });
     }
   }
+
+  loadEvents(): void {
+    this.dataService.getEvents().subscribe({
+      next: (events) => {
+        this.events = events;
+        this.eventMap = {};
+        for (const event of events) {
+          this.eventMap[event.id] = event.name;
+        }
+      },
+      error: () => this.toastr.error('Failed to load events'),
+    });
+  }
+
+  loadAttendees(): void {
+    this.dataService.getAttendees().subscribe({
+      next: (attendees) => {
+        this.attendees = attendees
+        this.attendeeMap ={};
+        for (const attendee of attendees) {
+          this.attendeeMap[attendee.id] = attendee.fullName;
+        }
+
+
+      },
+      error: () => this.toastr.error('Failed to load attendees'),
+    });
+  }
+
 
 }

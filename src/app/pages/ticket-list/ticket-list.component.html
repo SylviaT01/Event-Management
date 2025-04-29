@@ -1,37 +1,41 @@
 <div class="container mx-auto p-6">
-    <h2 class="text-2xl font-bold mb-4 text-gray-800">Tickets</h2>
+  <div class="flex flex-row justify-between">
+    <h2 class="text-2xl font-bold mb-4 text-gray-200">Tickets</h2>
     <button
       [routerLink]="['/tickets/issue']"
-      class="mb-4 bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+      class="mb-4 bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-orange-500"
     >
-      Issue Ticket
+      + Issue Ticket
     </button>
+    </div>
     <table class="w-full bg-white shadow-md rounded-lg overflow-hidden text-gray-600">
       <thead class="bg-gray-100">
         <tr>
-          <th class="p-4 text-left">Attendee ID</th>
-          <th class="p-4 text-left">Event ID</th>
+          <th class="p-4 text-left">#</th>
+          <th class="p-4 text-left">Attendee Name</th>
+          <th class="p-4 text-left">Event Name</th>
           <th class="p-4 text-left">Type</th>
           <th class="p-4 text-left">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ticket of tickets" class="border-b hover:bg-gray-50">
-          <td class="p-4">{{ ticket.attendeeId }}</td>
-          <td class="p-4">{{ ticket.eventId }}</td>
+        <tr *ngFor="let ticket of tickets let i = index" class="border-b hover:bg-gray-50">
+          <td class="p-4">{{ i + 1}}</td>
+          <td class="p-4">{{ attendeeMap[ticket.attendeeId] || ticket.attendeeId }}</td>
+          <td class="p-4">{{ eventMap[ticket.eventId] || ticket.eventId }}</td>
           <td class="p-4">{{ ticket.type }}</td>
           <td class="p-4 space-x-2">
             <button
               [routerLink]="['/tickets', ticket.id]"
-              class="text-blue-600 hover:underline"
+              class="text-blue-400 hover:underline"
             >
-              View
+            <span class="material-icons">visibility</span>
             </button>
             <button
               (click)="deleteTicket(ticket.id)"
-              class="text-red-600 hover:underline"
+              class="text-red-400 hover:underline"
             >
-              Cancel
+            <span class="material-icons">cancel</span>
             </button>
           </td>
         </tr>

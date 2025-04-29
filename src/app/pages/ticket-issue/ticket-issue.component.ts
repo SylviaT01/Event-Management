@@ -16,7 +16,7 @@ export class TicketIssueComponent implements OnInit {
     type: '',
   };
   attendees: Attendee[] = [];
-  ticketTypes = ['General', 'VIP'];
+  ticketTypes = ['Regular', 'VIP', 'VVIP'];
 
   constructor(
     private dataService: DataService,
@@ -49,6 +49,9 @@ export class TicketIssueComponent implements OnInit {
     } else {
       this.toastr.error('Invalid attendee');
     }
+  }
+  cancel():void{
+    this.router.navigate(['/tickets'])
   }
 
 }

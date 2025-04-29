@@ -5,7 +5,7 @@
       "name": "Tech Conference 2025",
       "location": "Nairobi Convention Center",
       "date": "2025-06-20",
-      "capacity": 600
+      "capacity": 200
     },
     {
       "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -34,6 +34,20 @@
       "location": "Carnivore Grounds",
       "date": "2025-05-03",
       "capacity": 1000
+    },
+    {
+      "id": "03e9feaf-45e7-47d8-a760-2e717d9adaa3",
+      "name": "Moringa Tech Fair",
+      "location": "Karen, Nairobi",
+      "date": "2025-04-30",
+      "capacity": 200
+    },
+    {
+      "id": "ae879766-5705-47f7-92b9-2568e6ca5569",
+      "name": "Engineering Surveyors Fair",
+      "location": "Nakuru",
+      "date": "2025-05-01",
+      "capacity": 250
     }
   ],
   "attendees": [
@@ -72,6 +86,12 @@
       "fullName": "Brian",
       "email": "brian@gmail.com",
       "eventId": "550e8400-e29b-41d4-a716-446655440000"
+    },
+    {
+      "id": "19107b4b-a95c-4a10-abe4-d9d7a8812272",
+      "fullName": "Ian Tuei",
+      "email": "iantuei@gmail.com",
+      "eventId": null
     }
   ],
   "tickets": [
@@ -97,6 +117,18 @@
       "id": "01a0d013-e10f-442b-b01e-98893070ab56",
       "attendeeId": "85b68218-665c-41ed-81c7-1d547b2336b4",
       "eventId": "11c01ab1-3003-4b2b-b044-3088a8ccff0d",
+      "type": "Regular"
+    },
+    {
+      "id": "f9cacecb-c292-4021-bf6b-783a2b25fb7b",
+      "attendeeId": "456789ab-cdef-1234-5678-901234567890",
+      "eventId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "type": "Regular"
+    },
+    {
+      "id": "9087ca88-6f36-4285-aa29-9ac303331b5a",
+      "attendeeId": "987fcdeb-12ab-34cd-56ef-789012345678",
+      "eventId": "550e8400-e29b-41d4-a716-446655440000",
       "type": "Regular"
     }
   ]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Attendee, Event, DataService, Ticket } from '../../services/data.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ticket-list',
@@ -37,11 +38,12 @@ export class TicketListComponent implements OnInit {
     });
   }
 
-  deleteTicket(id: string): void {
-    if (confirm('Are you sure you want to cancel this ticket?')) {
+  async deleteTicket(id: string): Promise<void >{
+    const confirmed = await this.confirmAction('Delete Warning', 'Are you sure you want to delete this ticket?');
+    if (confirmed) {
       this.dataService.deleteTicket(id).subscribe({
         next: () => {
-          this.toastr.success('Ticket cancelled successfully');
+          this.showSuccessNotification('Event Deleted', 'The event has been deleted successfully.');
           this.loadTickets();
         },
         error: () => this.toastr.error('Failed to cancel ticket'),
@@ -76,6 +78,44 @@ export class TicketListComponent implements OnInit {
       error: () => this.toastr.error('Failed to load attendees'),
     });
   }
+  showNotification(icon: 'success' | 'error' | 'warning' | 'info' | 'question',
+          title: string,
+          text: string): void {
+          Swal.fire({
+            icon: icon,
+            title: title,
+            text: text,
+            timer: 3000,
+            timerProgressBar: true,
+            showConfirmButton: false
+          });
+        }
+      
+      
+        showSuccessNotification(title: string, text: string): void {
+          this.showNotification('success', title, text);
+        }
+        showErrorNotification(title: string, text: string): void{
+          this.showNotification('error', title, text)
+        }
+      
+      
+        confirmAction(title: string, text: string, confirmButtonText: string = 'Yes'): Promise<boolean> {
+          return new Promise((resolve) => {
+            Swal.fire({
+              title: title,
+              text: text,
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: confirmButtonText
+            }).then((result) => {
+              resolve(result.isConfirmed);
+            });
+          });
+        }
+  
 
 
 }

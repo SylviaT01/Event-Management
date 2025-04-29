@@ -4,8 +4,8 @@
       "id": "550e8400-e29b-41d4-a716-446655440000",
       "name": "Tech Conference 2025",
       "location": "Nairobi Convention Center",
-      "date": "2025-06-15",
-      "capacity": 500
+      "date": "2025-06-20",
+      "capacity": 600
     },
     {
       "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -20,6 +20,20 @@
       "location": "Kisumu Tech Hub",
       "date": "2025-08-10",
       "capacity": 100
+    },
+    {
+      "id": "cb06267b-e1bb-4b79-93b7-9899c4fc705d",
+      "name": "Gracies Groceries",
+      "location": "Karen, Nairobi",
+      "date": "2025-04-30",
+      "capacity": 200
+    },
+    {
+      "id": "11c01ab1-3003-4b2b-b044-3088a8ccff0d",
+      "name": "Korom Festival",
+      "location": "Carnivore Grounds",
+      "date": "2025-05-03",
+      "capacity": 1000
     }
   ],
   "attendees": [

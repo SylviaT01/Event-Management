@@ -1,31 +1,34 @@
-<nav class="bg-indigo-600 shadow-md">
+<nav class=" shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <a [routerLink]="['/']" class="text-white text-xl font-bold">Event Management</a>
+          <a 
+          [routerLink]="['/']" 
+          routerLinkActive="border-white"
+          class="text-white text-xl font-bold text-center px-3 py-2 rounded-md border-b-2 border-transparent">Event <span class="text-orange-500">Management</span></a>
         </div>
   
         <!-- Desktop Menu -->
-        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+        <div class="hidden sm:ml-6 sm:flex items-center text-center sm:space-x-8">
           <a
             [routerLink]="['/events']"
             routerLinkActive="border-white"
-            class="text-white hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent"
+            class="text-white   hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent"
           >
             Events
           </a>
           <a
             [routerLink]="['/attendees']"
             routerLinkActive="border-white"
-            class="text-white hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent"
+            class="text-white   hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent"
           >
             Attendees
           </a>
           <a
             [routerLink]="['/tickets']"
             routerLinkActive="border-white"
-            class="text-white hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent"
+            class="text-white  hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent"
           >
             Tickets
           </a>

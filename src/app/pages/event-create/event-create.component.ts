@@ -40,5 +40,8 @@ export class EventCreateComponent {
       error: () => this.toastr.error('Failed to create event'),
     });
   }
+  cancel(): void {
+    this.router.navigate(['/events']);
+  }
 }
 

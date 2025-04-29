@@ -1,4 +1,4 @@
-<div class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg" *ngIf="event">
+<div class="max-w-md mx-auto p-6 mt-10 bg-white shadow-md rounded-lg" *ngIf="event">
     <h2 class="text-2xl font-bold mb-4 text-gray-800">{{ event.name }}</h2>
     <div class="space-y-2 text-gray-600">
       <p><strong>Location:</strong> {{ event.location }}</p>
@@ -7,8 +7,9 @@
     </div>
     <button
       [routerLink]="['/events']"
-      class="mt-4 bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700"
+      class="mt-4 bg-gray-600 text-white py-2 px-4 rounded-md hover:bg-gray-700 flex items-center"
     >
+      <span class="material-icons mr-2">arrow_back</span>
       Back to Events
     </button>
   </div>

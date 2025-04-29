@@ -4,14 +4,13 @@ import { DataService } from '../../services/data.service';
 import { Event } from '../../services/data.service';
 import { ToastrService } from 'ngx-toastr';
 
-
 @Component({
   selector: 'app-event-edit',
   standalone: false,
   templateUrl: './event-edit.component.html',
   styleUrl: './event-edit.component.css'
 })
-export class EventEditComponent implements OnInit{
+export class EventEditComponent implements OnInit {
   event: Event | null = null;
 
   constructor(
@@ -45,4 +44,7 @@ export class EventEditComponent implements OnInit{
     });
   }
 
+  cancel(): void {
+    this.router.navigate(['/events']);
+  }
 }

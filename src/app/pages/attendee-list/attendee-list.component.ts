@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Attendee, DataService } from '../../services/data.service';
+import { Attendee, DataService, Event } from '../../services/data.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AttendeeListComponent implements OnInit {
   attendees: Attendee[] = [];
+  events: Event[] = [];
+  eventMap: { [key: string]: string } = {}; 
 
   constructor(
     private dataService: DataService,
@@ -19,7 +21,21 @@ export class AttendeeListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loadEvents();
     this.loadAttendees();
+  }
+
+  loadEvents(): void {
+    this.dataService.getEvents().subscribe({
+      next: (events) => {
+        this.events = events;
+        this.eventMap = {};
+        for (const event of events) {
+          this.eventMap[event.id] = event.name;
+        }
+      },
+      error: () => this.toastr.error('Failed to load events'),
+    });
   }
 
   loadAttendees(): void {

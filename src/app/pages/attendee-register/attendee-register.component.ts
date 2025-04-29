@@ -25,7 +25,7 @@ export class AttendeeRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getEvents().subscribe({
-      next: (events) => (this.events = events), // Fixed typo (was thisDrupal)
+      next: (events) => (this.events = events), 
       error: () => this.toastr.error('Failed to load events'),
     });
   }
@@ -42,5 +42,9 @@ export class AttendeeRegisterComponent implements OnInit {
       },
       error: () => this.toastr.error('Failed to register attendee'),
     });
+  }
+
+  cancel() : void{
+    this.router.navigate(['/attendees'])
   }
 }

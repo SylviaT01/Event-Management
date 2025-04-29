@@ -5,7 +5,8 @@
       "name": "Tech Conference 2025",
       "location": "Nairobi Convention Center",
       "date": "2025-06-20",
-      "capacity": 200
+      "capacity": 200,
+      "ticketsIssued": 1
     },
     {
       "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
@@ -19,7 +20,8 @@
       "name": "AI Workshop",
       "location": "Kisumu Tech Hub",
       "date": "2025-08-10",
-      "capacity": 100
+      "capacity": 100,
+      "ticketsIssued": 1
     },
     {
       "id": "cb06267b-e1bb-4b79-93b7-9899c4fc705d",
@@ -130,6 +132,30 @@
       "attendeeId": "987fcdeb-12ab-34cd-56ef-789012345678",
       "eventId": "550e8400-e29b-41d4-a716-446655440000",
       "type": "Regular"
+    },
+    {
+      "id": "95352ff2-b61d-493e-afbb-eab2dbea7c3e",
+      "attendeeId": "987fcdeb-12ab-34cd-56ef-789012345678",
+      "eventId": "550e8400-e29b-41d4-a716-446655440000",
+      "type": "VVIP"
+    },
+    {
+      "id": "d43caa3e-f4bf-4964-9574-51d740237a9a",
+      "attendeeId": "123e4567-e89b-12d3-a456-426614174000",
+      "eventId": "550e8400-e29b-41d4-a716-446655440000",
+      "type": "VIP"
+    },
+    {
+      "id": "e65f218c-e5e5-41c4-9b10-16ec63e6cb40",
+      "attendeeId": "f42fb84f-d5f3-4beb-8645-95bc07e17bda",
+      "eventId": "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+      "type": "Regular"
+    },
+    {
+      "id": "6b97af71-960e-4b7f-a2e7-ed7f098f2d0c",
+      "attendeeId": "123e4567-e89b-12d3-a456-426614174000",
+      "eventId": "550e8400-e29b-41d4-a716-446655440000",
+      "type": "VIP"
     }
   ]
 }
